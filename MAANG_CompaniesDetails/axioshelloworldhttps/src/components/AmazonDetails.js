@@ -6,17 +6,18 @@ import './componentsCss.css'
 let string1 = `This is coming from GetSomethingMongo Component`;
 let stringloading = `loading........`;
 // let stringloaded = `MONGO DB DATA IS HERE FROM AXIOS`;
-let listofmovies =`Here is your list of details of apple in a nice simple list`;
-let MongoURI = 'http://localhost:8081/mongodb/apple'
+let listofmovies =`Here is your list of details of amazon in a nice simple list`;
+let MongoURI = 'http://localhost:8081/mongodb/amazon'
 
-const AppleDetails = () => {
+const AmazonDetails = () => {
 
     const [post, setPost] = useState(null);
 
-    function AppleItem(props) {
+    function AmazonItem(props) {
         // console.log(props);
-        const applething = (
+        const amazonthing = (
             <div>
+                
                 <h2>Company ID : {props.detail._id}</h2>
                 <br></br>
                 <img className="w-50 mb-4 rounded" src={props.detail.logo} alt="" />
@@ -36,7 +37,7 @@ const AppleDetails = () => {
                         <div class="col">
                             
                             <h3 className="fw-bold fs-2">CEO</h3>
-                            <img className="fimg rounded" style={{width:'60%'}} src={props.detail.Ceo.url} alt="" />
+                            <img className="fimg rounded" style={{width:'40%'}} src={props.detail.Ceo.url} alt="" />
                             <h4>Name : {props.detail.Ceo.name}</h4>
                             <h5>Born : {props.detail.Ceo.yearb}</h5>
                             <h5>Studies : {props.detail.Ceo.studies}</h5>
@@ -44,27 +45,18 @@ const AppleDetails = () => {
                 
                         </div>
                     </div>
-                    </div>
-                {/* <h3>Founder</h3>
-                <img src={props.detail.Founder.url} alt="" />
-                <h4>Name : {props.detail.Founder.name}</h4>
-                <h4>Born : {props.detail.Founder.yearb}</h4>
-                <h4>Year they Founded : {props.detail.Founder.yearf}</h4>
+                </div>
+                
 
                 {/* <p>rating : {props.movie.imdb.rating}</p>
                 <p>votes : {props.movie.imdb.votes}</p>
                 <p>id : {props.movie.imdb.id}</p> */}
                 {/* <p>hello</p> */}
-                {/* <br />
-                <h3>CEO</h3>
-                <img src={props.detail.Ceo.url} alt="" />
-                <h4>Name : {props.detail.Ceo.name}</h4>
-                <h4>Born : {props.detail.Ceo.yearb}</h4>
-                <h4>Year he become CEO : {props.detail.Ceo.yearf}</h4> */} 
-                {/* <hr /> */}
+                <br />
+                
             </div>
         );
-        return applething;
+        return amazonthing;
     }
 
     useEffect ( () => {
@@ -104,7 +96,7 @@ const AppleDetails = () => {
         <h6 className="mb-4">{post.explanation}</h6> */}
         <h6 className="mb-4">{listofmovies}</h6>
         {post.details.map( (singlecompanyitem) => 
-        <AppleItem key={singlecompanyitem._id} detail={singlecompanyitem} />
+        <AmazonItem key={singlecompanyitem._id} detail={singlecompanyitem} />
                  )}
         
         </div>
@@ -115,4 +107,4 @@ const AppleDetails = () => {
     }
 
 
-export default AppleDetails;
+export default AmazonDetails;

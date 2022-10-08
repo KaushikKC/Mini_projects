@@ -6,20 +6,7 @@
 		"_exporter_id": "9430666"
 	},
 	"item": [
-		{
-			"name": "dummycarwithlodash",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}dummycarwithlodash",
-					"host": [
-						"{{host}}dummycarwithlodash"
-					]
-				}
-			},
-			"response": []
-		},
+		
 		
 		{
 			"name": "google",
@@ -37,6 +24,91 @@
 					],
 					"path": [
 						"google"
+					]
+				}
+			},
+			"response": []
+		},
+
+		{
+			"name": "apple",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				
+				"url": {
+					"raw": "{{host}}mongodb/apple",
+					"host": [
+						"{{host}}mongodb"
+					],
+					"path": [
+						"apple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "amazon",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				
+				"url": {
+					"raw": "{{host}}mongodb/amazon",
+					"host": [
+						"{{host}}mongodb"
+					],
+					"path": [
+						"amazon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "netflix",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				
+				"url": {
+					"raw": "{{host}}mongodb/netflix",
+					"host": [
+						"{{host}}mongodb"
+					],
+					"path": [
+						"netflix"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				
+				"url": {
+					"raw": "{{host}}mongodb/meta",
+					"host": [
+						"{{host}}mongodb"
+					],
+					"path": [
+						"meta"
 					]
 				}
 			},

@@ -1,25 +1,24 @@
 import axios from "axios";
 import { useState, useEffect } from 'react';
 import React from "react";
-import './componentsCss.css'
 
 let string1 = `This is coming from GetSomethingMongo Component`;
 let stringloading = `loading........`;
 // let stringloaded = `MONGO DB DATA IS HERE FROM AXIOS`;
-let listofmovies =`Here is your list of details of apple in a nice simple list`;
-let MongoURI = 'http://localhost:8081/mongodb/apple'
+let listofmovies =`Here is your list of details of netflix in a nice simple list`;
+let MongoURI = 'http://localhost:8081/mongodb/netflix'
 
-const AppleDetails = () => {
+const NetflixDetails = () => {
 
     const [post, setPost] = useState(null);
 
-    function AppleItem(props) {
+    function NetflixItem(props) {
         // console.log(props);
-        const applething = (
+        const netflixthing = (
             <div>
                 <h2>Company ID : {props.detail._id}</h2>
                 <br></br>
-                <img className="w-50 mb-4 rounded" src={props.detail.logo} alt="" />
+                <img className="w-50 m-4 rounded" src={props.detail.logo} alt="" />
                 <p className="w-50 m-auto">{props.detail.description}</p>
                 <br />
                 <hr />
@@ -27,16 +26,16 @@ const AppleDetails = () => {
                     <div class="row">
                         <div class="col">
                             <h3 className="fw-bold fs-2">Founder</h3>
-                            <img className="fimg rounded" style={{width:'30%'}} src={props.detail.Founder.url} alt="" />
+                            <img className="fimg rounded" style={{width:'50%', height:"50%"}} src={props.detail.Founder.url} alt="" />
                             <h4>Name : {props.detail.Founder.name}</h4>
                             <h5>Born : {props.detail.Founder.yearb}</h5>
-                            <h5>Studies : {props.detail.Founder.studies}</h5>
-                            <h5>Year he Founded : {props.detail.Founder.yearf}</h5>
+                            {/* <h5>Studies : {props.detail.Founder.studies}</h5> */}
+                            <h5>Year they Founded : {props.detail.Founder.yearf}</h5>
                         </div>
                         <div class="col">
                             
                             <h3 className="fw-bold fs-2">CEO</h3>
-                            <img className="fimg rounded" style={{width:'60%'}} src={props.detail.Ceo.url} alt="" />
+                            <img className="fimg rounded" style={{width:'40%'}} src={props.detail.Ceo.url} alt="" />
                             <h4>Name : {props.detail.Ceo.name}</h4>
                             <h5>Born : {props.detail.Ceo.yearb}</h5>
                             <h5>Studies : {props.detail.Ceo.studies}</h5>
@@ -49,7 +48,7 @@ const AppleDetails = () => {
                 <img src={props.detail.Founder.url} alt="" />
                 <h4>Name : {props.detail.Founder.name}</h4>
                 <h4>Born : {props.detail.Founder.yearb}</h4>
-                <h4>Year they Founded : {props.detail.Founder.yearf}</h4>
+                <h4>Year they Founded : {props.detail.Founder.yearf}</h4> */}
 
                 {/* <p>rating : {props.movie.imdb.rating}</p>
                 <p>votes : {props.movie.imdb.votes}</p>
@@ -60,11 +59,11 @@ const AppleDetails = () => {
                 <img src={props.detail.Ceo.url} alt="" />
                 <h4>Name : {props.detail.Ceo.name}</h4>
                 <h4>Born : {props.detail.Ceo.yearb}</h4>
-                <h4>Year he become CEO : {props.detail.Ceo.yearf}</h4> */} 
-                {/* <hr /> */}
+                <h4>Year he become CEO : {props.detail.Ceo.yearf}</h4>
+                <hr /> */}
             </div>
         );
-        return applething;
+        return netflixthing;
     }
 
     useEffect ( () => {
@@ -104,7 +103,7 @@ const AppleDetails = () => {
         <h6 className="mb-4">{post.explanation}</h6> */}
         <h6 className="mb-4">{listofmovies}</h6>
         {post.details.map( (singlecompanyitem) => 
-        <AppleItem key={singlecompanyitem._id} detail={singlecompanyitem} />
+        <NetflixItem key={singlecompanyitem._id} detail={singlecompanyitem} />
                  )}
         
         </div>
@@ -115,4 +114,4 @@ const AppleDetails = () => {
     }
 
 
-export default AppleDetails;
+export default NetflixDetails;

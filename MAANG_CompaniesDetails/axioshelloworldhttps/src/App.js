@@ -1,4 +1,5 @@
 import './App.css';
+import { Routes, Route } from "react-router-dom";
 
 //enguerrand-blanchy-3oADW0Ptj8c-unsplash
 // import GetSomething from './components/GetSomething';
@@ -7,6 +8,12 @@ import './App.css';
 // import localImageDiamondMoon from "./images/enguerrand-blanchy-3oADW0Ptj8c-unsplash.jpg";
 // import GetSomethingMongo from "./components/GetSomethingMongo";
 import GoogleDetails from './components/GoogleDetails';
+import AppleDetails from './components/AppleDetails';
+import Home from './components/Home';
+import Layout from './components/Layout';
+import AmazonDetails from './components/AmazonDetails';
+import NetflixDetails from './components/NetflixDetails';
+import MetaDetails from './components/MetaDetails';
 // let string1 = `this is coming from App JS`;
 
 
@@ -14,9 +21,23 @@ import GoogleDetails from './components/GoogleDetails';
 function App() {
   return (
     <div className="App">
-      <div className="text-center hero my-5">
+      {/* <div className="text-center hero my-5">
         <GoogleDetails />
-      </div>
+      </div> */}
+      <Routes>
+          <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="google" element={<GoogleDetails />} />
+          <Route path="apple" element={<AppleDetails />} />
+          <Route path="amazon" element={<AmazonDetails />} />
+          <Route path="netflix" element={<NetflixDetails />} />
+          <Route path="meta" element={<MetaDetails />} />
+          {/* Using path="*"" means "match anything", so this route
+                acts like a catch-all for URLs that we don't have explicit
+                routes for. */}
+          {/* <Route path="*" element={<NoMatch />} /> */}
+        </Route>
+      </Routes>
       {/* <div className="text-center hero my-5">
         <GetSomething />
       </div>

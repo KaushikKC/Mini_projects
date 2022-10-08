@@ -4,7 +4,7 @@ import React from "react";
 
 let string1 = `This is coming from GetSomethingMongo Component`;
 let stringloading = `loading........`;
-let stringloaded = `MONGO DB DATA IS HERE FROM AXIOS`;
+// let stringloaded = `MONGO DB DATA IS HERE FROM AXIOS`;
 let listofmovies =`Here is your list of details of google in a nice simple list`;
 let MongoURI = 'http://localhost:8081/mongodb/google'
 
@@ -18,26 +18,49 @@ const GoogleDetails = () => {
             <div>
                 <h2>Company ID : {props.detail._id}</h2>
                 <br></br>
-                <img className="w-50" src={props.detail.logo} alt="" />
-                <p>{props.detail.description}</p>
+                <img className="w-50 m-4 rounded" src={props.detail.logo} alt="" />
+                <p className="w-50 m-auto">{props.detail.description}</p>
                 <br />
-                <h3>Founder</h3>
+                <hr />
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col">
+                            <h3 className="fw-bold fs-2">Founder</h3>
+                            <img className="fimg rounded" style={{width:'50%'}} src={props.detail.Founder.url} alt="" />
+                            <h4>Name : {props.detail.Founder.name}</h4>
+                            <h5>Born : {props.detail.Founder.yearb}</h5>
+                            <h5>Studies : {props.detail.Founder.studies}</h5>
+                            <h5>Year they Founded : {props.detail.Founder.yearf}</h5>
+                        </div>
+                        <div class="col">
+                            
+                            <h3 className="fw-bold fs-2">CEO</h3>
+                            <img className="fimg rounded" style={{width:'50%'}} src={props.detail.Ceo.url} alt="" />
+                            <h4>Name : {props.detail.Ceo.name}</h4>
+                            <h5>Born : {props.detail.Ceo.yearb}</h5>
+                            <h5>Studies : {props.detail.Ceo.studies}</h5>
+                            <h5>Year he become CEO : {props.detail.Ceo.yearf}</h5>
+                
+                        </div>
+                    </div>
+                    </div>
+                {/* <h3>Founder</h3>
                 <img src={props.detail.Founder.url} alt="" />
                 <h4>Name : {props.detail.Founder.name}</h4>
                 <h4>Born : {props.detail.Founder.yearb}</h4>
-                <h4>Year they Founded : {props.detail.Founder.yearf}</h4>
+                <h4>Year they Founded : {props.detail.Founder.yearf}</h4> */}
 
                 {/* <p>rating : {props.movie.imdb.rating}</p>
                 <p>votes : {props.movie.imdb.votes}</p>
                 <p>id : {props.movie.imdb.id}</p> */}
                 {/* <p>hello</p> */}
-                <br />
+                {/* <br />
                 <h3>CEO</h3>
                 <img src={props.detail.Ceo.url} alt="" />
                 <h4>Name : {props.detail.Ceo.name}</h4>
                 <h4>Born : {props.detail.Ceo.yearb}</h4>
                 <h4>Year he become CEO : {props.detail.Ceo.yearf}</h4>
-                <hr />
+                <hr /> */}
             </div>
         );
         return googlething;
